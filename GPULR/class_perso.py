@@ -158,14 +158,18 @@ class Event:
     def format_datas(self) -> None:
         """
         Restructure les données de l'événement. Cette fonction ne peut être utilisée qu'une seule fois.
+
+        Format le tritre de la facons suivante : COUR de TELCO4
+        Et la description : R3.07-Réseaux d'accès\nProf: xxx
         """
         if self._restructured:
             raise Exception("Les données ont déjà été restructurées.")
         
-        # Restructurer le titre
+        # Restructurer le titre et extraction du groupe pour se cour
         parts = self._summary.split(" / ")
         if len(parts) > 1:
             self._summary = f"{parts[1]} de {parts[0]}"
+
             groupe:int=0
             try:
                 groupe=int(parts[2].split('-')[1].split(' ')[1])

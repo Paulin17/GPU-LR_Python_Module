@@ -1,8 +1,12 @@
 from setuptools import setup, find_packages
+import codecs
+
+with codecs.open('README.md', 'r', 'utf-8') as f:
+    long_description = f.read()
 
 setup(
-    name='GPU',
-    version='0.1',
+    name='GPU-LR',
+    version='1.0',
     packages=find_packages(),
     install_requires=[
         'requests',
@@ -16,7 +20,7 @@ setup(
     author='DOYON Paulin',
     author_email='contact@paulinodoyn.fr',
     description='Module pour gérer les connexions et récupérer des informations depuis le site GPU',
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/Paulin17/GPU_Python_Module',  # Remplacez par l'URL de votre repository
     classifiers=[

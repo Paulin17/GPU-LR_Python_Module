@@ -1,7 +1,7 @@
-# Module GPU
+# GPU Module Repository
 
 ## Description
-Le module `GPU` est conçu pour gérer les connexions et récupérer des informations depuis le site GPU. Il inclut des fonctions pour se connecter, obtenir des informations sur les étudiants, lister les semaines disponibles et télécharger les données d'une semaine spécifique. Il contient également des classes pour représenter des événements et des étudiants, ainsi qu'un agenda pour gérer ces événements.
+Ce repository contient le module `GPU` conçu pour gérer les connexions et récupérer des informations depuis le site GPU. Il inclut des fonctions pour se connecter, obtenir des informations sur les étudiants, lister les semaines disponibles et télécharger les données d'une semaine spécifique. Il contient également des classes pour représenter des événements et des étudiants, ainsi qu'un agenda pour gérer ces événements.
 
 ## Installation
 Pour utiliser ce module, assurez-vous que tous les fichiers nécessaires sont dans le même répertoire et que vous avez configuré les variables d'environnement si nécessaire.
@@ -96,3 +96,5 @@ if __name__ == "__main__":
         print("Usage: python script.py <num_etu>")
         sys.exit(1)
     main(GPU.Student(int(sys.argv[1])))
+```
+
