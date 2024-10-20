@@ -392,9 +392,7 @@ class Agenda:
             self._events.remove(event)
 
     def export(self, filename: str) -> None:
-        with open('GPU/base.ics', 'r') as base_file:
-            base_content = base_file.read()
-        ics_content = base_content
+        ics_content = "BEGIN:VCALENDAR\nPRODID:-//Paulin_DOYON//IUTRTLR//FR\nVERSION:2.0\nCALSCALE:GREGORIAN\nX-WR-CALNAME:Emploi du temps - IUT La Rochelle\nX-WR-TIMEZONE:Europe/Paris\nX-WR-CALDESC:Emploi du temps de l'IUT récupéré à partir de GPU LR\nBEGIN:VTIMEZONE\nTZID:Europe/Paris\nX-LIC-LOCATION:Europe/Paris\nBEGIN:DAYLIGHT\nDTSTART:19700329T020000\nTZNAME:CEST\nTZOFFSETFROM:+0100\nTZOFFSETTO:+0200\nRRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=3;BYDAY=-1SU\nTZNAME:CET\nEND:DAYLIGHT\nBEGIN:STANDARD\nDTSTART:19701025T030000\nTZOFFSETFROM:+0200\nTZOFFSETTO:+0100\nRRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=10;BYDAY=-1SU\nEND:STANDARD\nEND:VTIMEZONE"
         for event in self._events:
             ics_content += "BEGIN:VEVENT\n"
             ics_content += f"UID:{event._uid}\n"
