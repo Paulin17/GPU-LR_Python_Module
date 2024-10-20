@@ -5,8 +5,8 @@ with codecs.open('README.md', 'r', 'utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='GPU-LR',
-    version='1.1',
+    name='GPULR',
+    version='1.2',
     packages=find_packages(),
     install_requires=[
         'requests',
