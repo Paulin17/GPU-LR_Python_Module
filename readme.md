@@ -47,7 +47,7 @@ Pour utiliser ce module, assurez-vous que tous les fichiers nécessaires sont da
 ### Exemple d'Utilisation
 
 ```python
-import GPU
+import gpulr as GPU
 import os,sys
 
 def main(etudiant: GPU.Student) -> None:

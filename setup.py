@@ -5,8 +5,8 @@ with codecs.open('README.md', 'r', 'utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='GPULR',
-    version='1.2',
+    name='gpulr',
+    version='1.3',
     packages=find_packages(),
     install_requires=[
         'requests',
