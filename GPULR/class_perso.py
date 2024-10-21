@@ -191,7 +191,7 @@ class Event:
             prof_list:list[str]=[]
             for i in prof_abbr.split('/'):
                 prof_list.append(asso_prof.get(i, i))
-            self._description = f"{spe}\\nProfs : {", ".join(prof_list)}"
+            self._description = f"{spe}\\nProfs : {', '.join(prof_list)}"
         else:
             prof_name:str = asso_prof.get(prof_abbr, prof_abbr)
             self._description = f"{spe}\\nProf : {prof_name}"
