@@ -117,6 +117,29 @@ def get_Semaine(num_etu:int, week:int, session:requests.Session, directory:str) 
     with open(file_path, 'w') as f:
         f.write(response.text)
 
+def get_Semaine_Pdf(num_etu:int, week:int, year:int,session:requests.Session, directory:str) -> None:
+    """
+    Télécharge les données d'une semaine donnée et les enregistre dans un fichier PDF.
+
+    Args:
+        num_etu (int): Numéro de l'étudiant.
+        week (int): Numéro de la semaine.
+        year (int): Année de la seamine.
+        session (requests.Session): La session active contenant les cookies de connexion.
+        directory (str): Dossier où les fichiers VCS seront sauvegardés.
+    """
+    url_pdf = f"https://www.gpu-lr.fr/gpu/imp_edt_pdf.php?type=etudiant&codef=RT-S3&coder={num_etu}&semaine={week}&ansemaine={year}&ispdf=1"
+    
+    # Envoie une requête GET avec la session active
+    response = session.get(url_pdf)
+    response.raise_for_status()  # Vérifie si la requête a réussi
+
+    # Sauvegarde les données dans le fichier PDF
+    file_path = f"{directory}/week_{week}.pdf"
+    with open(file_path, 'wb') as f:
+        f.write(response.content)
+
+
 def decod(text):
     # Remplace les séquences =XX par \xXX pour indiquer un caractère hexadécimal
     modified_text = re.sub(r'=(..)', r'\\x\1', text)
