@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: gpulr
-Version: 1.8
+Version: 1.9
 Summary: Module pour gérer les connexions et récupérer des informations depuis le site GPU
 Home-page: https://github.com/Paulin17/GPU_Python_Module
 Author: DOYON Paulin

@@ -176,7 +176,7 @@ class Event:
             except IndexError:
                 try:
                     groupe=int(parts[2].split('-')[1].split(' ')[0])
-                except ValueError:
+                except:
                     groupe=0
             if groupe//10>9:
                 self._tp = groupe

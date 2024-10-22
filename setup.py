@@ -6,7 +6,7 @@ with codecs.open('README.md', 'r', 'utf-8') as f:
 
 setup(
     name='gpulr',
-    version='1.8',
+    version='1.9',
     packages=find_packages(),
     install_requires=[
         'requests',
