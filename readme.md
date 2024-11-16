@@ -76,7 +76,7 @@ def main(etudiant: GPU.Student) -> None:
 
     for numero in semaines_dispo:
         print(f'Téléchargement de la semaine {numero}')
-        GPU.get_Semaine(num_etu, numero, user_session, temp_dir_week)
+        GPU.get_Semaine(num_etu,numero,user_session,f"{temp_dir_week}/week_{numero}")
 
     agenda = GPU.Agenda(etudiant)
     for file in os.listdir(temp_dir_week):
