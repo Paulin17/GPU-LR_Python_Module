@@ -104,7 +104,7 @@ def get_Semaine(num_etu:int, week:int, session:requests.Session, file_path:str) 
         num_etu (int): Numéro de l'étudiant.
         week (int): Numéro de la semaine.
         session (requests.Session): La session active contenant les cookies de connexion.
-        directory (str): Dossier où les fichiers VCS seront sauvegardés.
+        file_path (str): Emplacement et nom pour sauvegarder le fichier.
     """
     url_agenda = f"https://www.gpu-lr.fr/gpu/gpu2vcs.php?semaine={week}&prof_etu=ETU&etudiant={num_etu}"
 
@@ -125,7 +125,7 @@ def get_Semaine_Pdf(num_etu:int, week:int, year:int,session:requests.Session, fi
         week (int): Numéro de la semaine.
         year (int): Année de la seamine.
         session (requests.Session): La session active contenant les cookies de connexion.
-        directory (str): Dossier où les fichiers VCS seront sauvegardés.
+        file_path (str): Emplacement et nom pour sauvegarder le fichier.
     """
     url_pdf = f"https://www.gpu-lr.fr/gpu/imp_edt_pdf.php?type=etudiant&codef=RT-S3&coder={num_etu}&semaine={week}&ansemaine={year}&ispdf=1"
     

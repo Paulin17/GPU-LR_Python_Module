@@ -18,8 +18,8 @@ Pour utiliser ce module, assurez-vous que tous les fichiers nécessaires sont da
   - `get_connection(login: int, password: str='123') -> requests.Session`: Connexion à GPU via une requête POST et retourne la session avec les cookies.
   - `get_infos(session: requests.Session) -> tuple[str, int, int]`: Récupère les informations de l'étudiant en utilisant la session active.
   - `list_semaine(session: requests.Session) -> list[int]`: Récupère la liste des semaines disponibles à partir de la page d'agenda étudiant.
-  - `get_Semaine(num_etu: int, week: int, session: requests.Session, directory: str) -> None`: Télécharge les données d'une semaine donnée et les enregistre dans un fichier VCS.
-  - `get_Semaine_Pdf(num_etu: int, week: int, year: int, session: requests.Session, directory: str) -> None`:Télécharge les données d'une semaine donnée et les enregistre dans un fichier PDF.
+  - `get_Semaine(num_etu: int, week: int, session: requests.Session, file_path: str) -> None`: Télécharge les données d'une semaine donnée et les enregistre dans un fichier VCS.
+  - `get_Semaine_Pdf(num_etu: int, week: int, year: int, session: requests.Session, file_path: str) -> None`:Télécharge les données d'une semaine donnée et les enregistre dans un fichier PDF.
 
 
 - **class_perso.py**
