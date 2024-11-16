@@ -96,7 +96,7 @@ def list_semaine(session: requests.Session) -> list[int]:
 
     return liste_semaines
 
-def get_Semaine(num_etu:int, week:int, session:requests.Session, directory:str) -> None:
+def get_Semaine(num_etu:int, week:int, session:requests.Session, file_path:str) -> None:
     """
     Télécharge les données d'une semaine donnée et les enregistre dans un fichier VCS.
 
@@ -113,11 +113,10 @@ def get_Semaine(num_etu:int, week:int, session:requests.Session, directory:str) 
     response.raise_for_status()  # Vérifie si la requête a réussi
 
     # Sauvegarde les données dans le fichier VCS
-    file_path = f"{directory}/week_{week}.vcs"
     with open(file_path, 'w') as f:
         f.write(response.text)
 
-def get_Semaine_Pdf(num_etu:int, week:int, year:int,session:requests.Session, directory:str) -> None:
+def get_Semaine_Pdf(num_etu:int, week:int, year:int,session:requests.Session, file_path:str) -> None:
     """
     Télécharge les données d'une semaine donnée et les enregistre dans un fichier PDF.
 
@@ -135,7 +134,6 @@ def get_Semaine_Pdf(num_etu:int, week:int, year:int,session:requests.Session, di
     response.raise_for_status()  # Vérifie si la requête a réussi
 
     # Sauvegarde les données dans le fichier PDF
-    file_path = f"{directory}/week_{week}.pdf"
     with open(file_path, 'wb') as f:
         f.write(response.content)
 

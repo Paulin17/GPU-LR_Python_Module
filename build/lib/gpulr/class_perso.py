@@ -377,7 +377,7 @@ class Agenda:
         for event in self._events:
             try:
                 event.format_datas()
-                event.ajouter_heure_si_hiver()
+                #event.ajouter_heure_si_hiver()
             except RestructurationError:
                 pass
             if hasattr(event, '_td') and event._td == self._student._td:
